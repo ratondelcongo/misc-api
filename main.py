@@ -12,6 +12,7 @@ def create_app():
 app = create_app()
 app.config['JSON_AS_ASCII'] = False
 
+
 @app.route("/")
 def hello_world():
     return "<p>xd!</p>"
@@ -25,11 +26,19 @@ def horoscope_by_sign():
     response = jsonify({'result': result})
     return response
 
+
 @app.route('/api/v1/horoscope_all', methods=['GET'])
 def horoscope_all():
-    args = request.args
-    sign = args.get("sign")
     result = utils.getHoroscopeAll()
+    print(result)
+    response = jsonify(result)
+    return response
+
+
+@app.route('/api/v1/clasificatorias_qatar', methods=['GET'])
+def getClasi():
+    result = utils.getTablaClasificatoriasQatar()
+    print(result)
     response = jsonify(result)
     return response
 
