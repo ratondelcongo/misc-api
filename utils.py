@@ -104,7 +104,7 @@ def getTablaClasificatoriasQatar():
         object['pais'] = pais
         object['dg'] = dg
         object['puntos'] = puntos
-        
+
         result.append(object)
 
         for i in range(5):
@@ -122,7 +122,7 @@ def getTablaClasificatoriasQatar():
             object['pais'] = pais
             object['dg'] = dg
             object['puntos'] = puntos
-            
+
             result.append(object)
     except:
         None
